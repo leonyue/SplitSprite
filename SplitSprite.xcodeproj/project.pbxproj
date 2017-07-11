@@ -1,0 +1,306 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1BDDB6D21F14A0C800A50BAE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDB6D11F14A0C800A50BAE /* AppDelegate.m */; };
+		1BDDB6D51F14A0C800A50BAE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDB6D41F14A0C800A50BAE /* main.m */; };
+		1BDDB6D81F14A0C800A50BAE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDB6D71F14A0C800A50BAE /* ViewController.m */; };
+		1BDDB6DA1F14A0C800A50BAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BDDB6D91F14A0C800A50BAE /* Assets.xcassets */; };
+		1BDDB6DD1F14A0C800A50BAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BDDB6DB1F14A0C800A50BAE /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1BDDB6CD1F14A0C800A50BAE /* SplitSprite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitSprite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BDDB6D01F14A0C800A50BAE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1BDDB6D11F14A0C800A50BAE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1BDDB6D41F14A0C800A50BAE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1BDDB6D61F14A0C800A50BAE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1BDDB6D71F14A0C800A50BAE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1BDDB6D91F14A0C800A50BAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1BDDB6DC1F14A0C800A50BAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1BDDB6DE1F14A0C800A50BAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1BDDB6CA1F14A0C600A50BAE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1BDDB6C41F14A0C600A50BAE = {
+			isa = PBXGroup;
+			children = (
+				1BDDB6CF1F14A0C800A50BAE /* SplitSprite */,
+				1BDDB6CE1F14A0C800A50BAE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1BDDB6CE1F14A0C800A50BAE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1BDDB6CD1F14A0C800A50BAE /* SplitSprite.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1BDDB6CF1F14A0C800A50BAE /* SplitSprite */ = {
+			isa = PBXGroup;
+			children = (
+				1BDDB6D01F14A0C800A50BAE /* AppDelegate.h */,
+				1BDDB6D11F14A0C800A50BAE /* AppDelegate.m */,
+				1BDDB6D61F14A0C800A50BAE /* ViewController.h */,
+				1BDDB6D71F14A0C800A50BAE /* ViewController.m */,
+				1BDDB6D91F14A0C800A50BAE /* Assets.xcassets */,
+				1BDDB6DB1F14A0C800A50BAE /* Main.storyboard */,
+				1BDDB6DE1F14A0C800A50BAE /* Info.plist */,
+				1BDDB6D31F14A0C800A50BAE /* Supporting Files */,
+			);
+			path = SplitSprite;
+			sourceTree = "<group>";
+		};
+		1BDDB6D31F14A0C800A50BAE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1BDDB6D41F14A0C800A50BAE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1BDDB6CC1F14A0C600A50BAE /* SplitSprite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BDDB6E11F14A0C800A50BAE /* Build configuration list for PBXNativeTarget "SplitSprite" */;
+			buildPhases = (
+				1BDDB6C91F14A0C600A50BAE /* Sources */,
+				1BDDB6CA1F14A0C600A50BAE /* Frameworks */,
+				1BDDB6CB1F14A0C600A50BAE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SplitSprite;
+			productName = SplitSprite;
+			productReference = 1BDDB6CD1F14A0C800A50BAE /* SplitSprite.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1BDDB6C51F14A0C600A50BAE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = dj.yue;
+				TargetAttributes = {
+					1BDDB6CC1F14A0C600A50BAE = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = L9P52E65L5;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 1BDDB6C81F14A0C600A50BAE /* Build configuration list for PBXProject "SplitSprite" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1BDDB6C41F14A0C600A50BAE;
+			productRefGroup = 1BDDB6CE1F14A0C800A50BAE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1BDDB6CC1F14A0C600A50BAE /* SplitSprite */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1BDDB6CB1F14A0C600A50BAE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BDDB6DA1F14A0C800A50BAE /* Assets.xcassets in Resources */,
+				1BDDB6DD1F14A0C800A50BAE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1BDDB6C91F14A0C600A50BAE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BDDB6D81F14A0C800A50BAE /* ViewController.m in Sources */,
+				1BDDB6D51F14A0C800A50BAE /* main.m in Sources */,
+				1BDDB6D21F14A0C800A50BAE /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1BDDB6DB1F14A0C800A50BAE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1BDDB6DC1F14A0C800A50BAE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1BDDB6DF1F14A0C800A50BAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1BDDB6E01F14A0C800A50BAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1BDDB6E21F14A0C800A50BAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = L9P52E65L5;
+				INFOPLIST_FILE = SplitSprite/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.leon.SplitSprite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1BDDB6E31F14A0C800A50BAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = L9P52E65L5;
+				INFOPLIST_FILE = SplitSprite/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.leon.SplitSprite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1BDDB6C81F14A0C600A50BAE /* Build configuration list for PBXProject "SplitSprite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BDDB6DF1F14A0C800A50BAE /* Debug */,
+				1BDDB6E01F14A0C800A50BAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BDDB6E11F14A0C800A50BAE /* Build configuration list for PBXNativeTarget "SplitSprite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BDDB6E21F14A0C800A50BAE /* Debug */,
+				1BDDB6E31F14A0C800A50BAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1BDDB6C51F14A0C600A50BAE /* Project object */;
+}
