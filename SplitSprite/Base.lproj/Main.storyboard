@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <plugIn identifier="com.apple.AVKitIBPlugin" version="13122.17"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13122.17"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -717,11 +718,11 @@
                                                             <rect key="frame" x="1" y="1" width="42" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t5m-rS-tJ3">
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t5m-rS-tJ3">
                                                                     <rect key="frame" x="0.0" y="0.0" width="42" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="2hl-yP-kQl">
-                                                                        <font key="font" metaFont="system" size="11"/>
+                                                                        <font key="font" metaFont="smallSystem"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
@@ -750,17 +751,17 @@
                                                             <rect key="frame" x="46" y="1" width="498" height="160"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hlz-Cp-F1N">
+                                                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="Hlz-Cp-F1N">
                                                                     <rect key="frame" x="5" y="5" width="267" height="150"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="Hlz-Cp-F1N" secondAttribute="height" multiplier="16:9" id="cdr-Rq-4Kl"/>
                                                                     </constraints>
                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="left" imageScaling="proportionallyDown" image="1_yuanya" id="6xZ-7d-QBw"/>
                                                                 </imageView>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Qqm-he-Exl">
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" tag="2" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qqm-he-Exl">
                                                                     <rect key="frame" x="275" y="5" width="220" height="150"/>
-                                                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="This is a description of the hahahah ah ha dshfashfahs fhadsjfas fsaf asf asfas" id="btd-Re-KYk">
-                                                                        <font key="font" metaFont="system" size="11"/>
+                                                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="loading..." id="btd-Re-KYk">
+                                                                        <font key="font" metaFont="smallSystem"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
@@ -782,6 +783,7 @@
                                             <connections>
                                                 <outlet property="dataSource" destination="XfG-lQ-9wD" id="Fqt-Wa-Vef"/>
                                                 <outlet property="delegate" destination="XfG-lQ-9wD" id="Ca9-3e-mdN"/>
+                                                <segue destination="AfU-O3-nV4" kind="modal" id="vZV-gK-Ucf"/>
                                             </connections>
                                         </tableView>
                                     </subviews>
@@ -834,7 +836,7 @@
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                     </button>
-                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="wlH-p8-s9t">
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wlH-p8-s9t">
                                         <rect key="frame" x="3" y="5" width="460" height="30"/>
                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="KBy-ar-kRa">
                                             <font key="font" metaFont="system" size="8"/>
@@ -869,13 +871,39 @@
                     </view>
                     <connections>
                         <outlet property="addButton" destination="31g-sB-vKU" id="Sug-iX-iSi"/>
+                        <outlet property="footerView" destination="Sxc-fB-iNp" id="TDg-wg-dDv"/>
+                        <outlet property="headerView" destination="dYT-06-1BK" id="eBT-h4-lpr"/>
                         <outlet property="informationNalTextField" destination="wlH-p8-s9t" id="wtg-bT-5v9"/>
                         <outlet property="tableView" destination="Y3L-ab-RSK" id="Ef9-2a-S79"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-106" y="819"/>
+            <point key="canvasLocation" x="-416" y="835"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ZL4-r3-2Sb">
+            <objects>
+                <viewController id="AfU-O3-nV4" sceneMemberID="viewController">
+                    <view key="view" id="ciK-pH-Q7r">
+                        <rect key="frame" x="0.0" y="0.0" width="570" height="333"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <avPlayerView controlsStyle="inline" translatesAutoresizingMaskIntoConstraints="NO" id="qcJ-hb-iay">
+                                <rect key="frame" x="0.0" y="0.0" width="570" height="333"/>
+                            </avPlayerView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="qcJ-hb-iay" firstAttribute="leading" secondItem="ciK-pH-Q7r" secondAttribute="leading" id="HpW-ZC-i1M"/>
+                            <constraint firstAttribute="trailing" secondItem="qcJ-hb-iay" secondAttribute="trailing" id="TeY-YU-0rp"/>
+                            <constraint firstAttribute="bottom" secondItem="qcJ-hb-iay" secondAttribute="bottom" id="VJj-vm-wSZ"/>
+                            <constraint firstItem="qcJ-hb-iay" firstAttribute="top" secondItem="ciK-pH-Q7r" secondAttribute="top" id="sms-Gx-lXi"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="31y-Gy-B6u" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="315" y="747"/>
         </scene>
     </scenes>
     <resources>

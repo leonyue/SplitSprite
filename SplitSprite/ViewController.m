@@ -21,6 +21,8 @@ static NSString *kTaskCellIdentifier   = @"taskCell";
 @property (weak) IBOutlet NSTableView *tableView;
 @property (weak) IBOutlet NSButton    *addButton;
 @property (weak) IBOutlet NSTextField *informationNalTextField;
+@property (weak) IBOutlet NSView *headerView;
+@property (weak) IBOutlet NSView *footerView;
 
 @end
 
@@ -28,7 +30,6 @@ static NSString *kTaskCellIdentifier   = @"taskCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.layer.contents = [NSImage imageNamed:@"beauty"];
     _tasks = [NSMutableArray new];
     // Do any additional setup after loading the view.
 }
@@ -85,6 +86,20 @@ static NSString *kTaskCellIdentifier   = @"taskCell";
     }
     if ([tableColumn.identifier isEqualToString:kTaskColumnIdentifier]) {
         NSView *taskCell = [tableView makeViewWithIdentifier:kTaskCellIdentifier owner:self];
+        NSImageView *imageView = [taskCell viewWithTag:1];
+        NSTextField *textField = [taskCell viewWithTag:2];
+        Task *task = self.tasks[row];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            textField.stringValue = task.url;
+        });
+        [task.generator generateCGImagesAsynchronouslyForTimes:@[[NSValue valueWithCMTime:kCMTimeZero]] completionHandler:^(CMTime requestedTime, CGImageRef  _Nullable image, CMTime actualTime, AVAssetImageGeneratorResult result, NSError * _Nullable error) {
+            CGImageRef icopy = CGImageCreateCopy(image);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSImage *imageNS = [[NSImage alloc] initWithCGImage:icopy size:imageView.bounds.size];
+                imageView.image = imageNS;
+                CGImageRelease(icopy);
+            });
+        }];
         return taskCell;
     }
     return nil;

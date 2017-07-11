@@ -24,15 +24,17 @@
 
 - (BOOL)setUp {
     AVAsset *asset  = [AVAsset assetWithURL:self.url];
-    CMTime duration = asset.duration;
-    if (CMTIME_IS_INVALID(duration) ||
-        CMTimeCompare(kCMTimeZero, duration) == 0) {
+    NSArray<AVAssetTrack *> *tracks = [asset tracksWithMediaType:AVMediaTypeVideo];
+    if (tracks.count == 0) {
         return NO;
     }
+    CMTime duration = asset.duration;
+    AVAssetImageGenerator *generator = [AVAssetImageGenerator assetImageGeneratorWithAsset:asset];
     self.asset      = asset;
     self.begin      = kCMTimeZero;
     self.end        = duration;
     self.duration   = duration;
+    self.generator   = generator;
     return YES;
 }
 

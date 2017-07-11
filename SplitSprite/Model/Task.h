@@ -13,11 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Task : NSObject
 
-@property (nonatomic, copy  ) NSURL   *url;
-@property (nonatomic, strong) AVAsset *asset;
-@property (nonatomic, assign) CMTime  begin;
-@property (nonatomic, assign) CMTime  end;
-@property (nonatomic, assign) CMTime  duration;
+@property (nonatomic, copy  ) NSURL                 *url;
+@property (nonatomic, strong) AVAsset               *asset;
+@property (nonatomic, assign) CMTime                begin;
+@property (nonatomic, assign) CMTime                end;
+@property (nonatomic, assign) CMTime                duration;
+@property (nonatomic, strong) AVAssetImageGenerator *generator;
 
 - (_Nullable id)initWithFileUrl:(NSURL *)url;
 
