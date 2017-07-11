@@ -10,8 +10,9 @@
 		1BDDB6D21F14A0C800A50BAE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDB6D11F14A0C800A50BAE /* AppDelegate.m */; };
 		1BDDB6D51F14A0C800A50BAE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDB6D41F14A0C800A50BAE /* main.m */; };
 		1BDDB6D81F14A0C800A50BAE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDB6D71F14A0C800A50BAE /* ViewController.m */; };
-		1BDDB6DA1F14A0C800A50BAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BDDB6D91F14A0C800A50BAE /* Assets.xcassets */; };
 		1BDDB6DD1F14A0C800A50BAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BDDB6DB1F14A0C800A50BAE /* Main.storyboard */; };
+		1BDDB6E71F14AC4B00A50BAE /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDB6E61F14AC4B00A50BAE /* Task.m */; };
+		1BDDB6E91F14B54D00A50BAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BDDB6E81F14B54D00A50BAE /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,9 +22,11 @@
 		1BDDB6D41F14A0C800A50BAE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1BDDB6D61F14A0C800A50BAE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		1BDDB6D71F14A0C800A50BAE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		1BDDB6D91F14A0C800A50BAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BDDB6DC1F14A0C800A50BAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1BDDB6DE1F14A0C800A50BAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BDDB6E51F14AC4B00A50BAE /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		1BDDB6E61F14AC4B00A50BAE /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
+		1BDDB6E81F14B54D00A50BAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +63,10 @@
 				1BDDB6D11F14A0C800A50BAE /* AppDelegate.m */,
 				1BDDB6D61F14A0C800A50BAE /* ViewController.h */,
 				1BDDB6D71F14A0C800A50BAE /* ViewController.m */,
-				1BDDB6D91F14A0C800A50BAE /* Assets.xcassets */,
+				1BDDB6E41F14AC1900A50BAE /* Model */,
 				1BDDB6DB1F14A0C800A50BAE /* Main.storyboard */,
 				1BDDB6DE1F14A0C800A50BAE /* Info.plist */,
+				1BDDB6E81F14B54D00A50BAE /* Assets.xcassets */,
 				1BDDB6D31F14A0C800A50BAE /* Supporting Files */,
 			);
 			path = SplitSprite;
@@ -74,6 +78,15 @@
 				1BDDB6D41F14A0C800A50BAE /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1BDDB6E41F14AC1900A50BAE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1BDDB6E51F14AC4B00A50BAE /* Task.h */,
+				1BDDB6E61F14AC4B00A50BAE /* Task.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +148,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BDDB6DA1F14A0C800A50BAE /* Assets.xcassets in Resources */,
+				1BDDB6E91F14B54D00A50BAE /* Assets.xcassets in Resources */,
 				1BDDB6DD1F14A0C800A50BAE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BDDB6E71F14AC4B00A50BAE /* Task.m in Sources */,
 				1BDDB6D81F14A0C800A50BAE /* ViewController.m in Sources */,
 				1BDDB6D51F14A0C800A50BAE /* main.m in Sources */,
 				1BDDB6D21F14A0C800A50BAE /* AppDelegate.m in Sources */,
