@@ -21,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setUpPlayerObserver];
 }
 
 - (void)viewDidAppear {
@@ -29,10 +30,27 @@
 }
 
 // MARK: private
+
+- (void)setUpPlayerObserver {
+    __weak typeof(self) weakSelf = self;
+    [self.player addPeriodicTimeObserverForInterval:CMTimeMakeWithSeconds(0.01, 300) queue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
+                                         usingBlock:^(CMTime time) {
+                                             if (CMTimeCompare(weakSelf.edittingTask.end, time) <= 0) {
+                                                 [weakSelf.player seekToTime:weakSelf.edittingTask.begin completionHandler:^(BOOL finished) {
+                                                     [weakSelf.player play];
+                                                 }];
+                                             }
+                                         }];
+}
+
 - (void)updatePlayerItem {
     AVPlayerItem *item = [AVPlayerItem playerItemWithURL:self.edittingTask.url];
     [self.player replaceCurrentItemWithPlayerItem:item];
-    [self.player play];
+    __weak typeof(self) weakSelf = self;
+    [self.player seekToTime:self.edittingTask.begin completionHandler:^(BOOL finished) {
+        [weakSelf.player play];
+    }];
+    
 }
 
 - (void)setUpWindowToolBarAction {
@@ -43,8 +61,12 @@
     void (^endClick)() = ^(){
         [weakSelf endClick];
     };
+    void (^recycleClick)() = ^(){
+        [weakSelf recycleClick];
+    };
     [self.view.window.windowController setValue:[startClick copy] forKey:@"startClick"];
     [self.view.window.windowController setValue:[endClick copy] forKey:@"endClick"];
+    [self.view.window.windowController setValue:[recycleClick copy] forKey:@"recycleClick"];
 }
 
 - (void)startClick {
@@ -55,6 +77,11 @@
 - (void)endClick {
     CMTime playerCurrent = self.player.currentTime;
     self.edittingTask.end = playerCurrent;
+}
+
+- (void)recycleClick {
+    self.edittingTask.begin = kCMTimeZero;
+    self.edittingTask.end = self.edittingTask.duration;
 }
 
 // MARK: Setter

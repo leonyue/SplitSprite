@@ -889,13 +889,22 @@
                                         <action selector="minusClick:" target="FKu-cA-VVC" id="OuH-YT-TNn"/>
                                     </connections>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="F7A57D7B-1E46-4960-B175-D0363857F0A4" label="重制" paletteLabel="重制" tag="-1" image="recycle" id="F4i-Lj-nDP">
+                                    <connections>
+                                        <action selector="recycleClick:" target="FKu-cA-VVC" id="G7N-El-znU"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="trZ-6O-kcd"/>
                                 <toolbarItem reference="9Bv-qB-Ifj"/>
+                                <toolbarItem reference="trZ-6O-kcd"/>
+                                <toolbarItem reference="F4i-Lj-nDP"/>
                                 <toolbarItem reference="sCw-a5-o4e"/>
                                 <toolbarItem reference="DND-z7-CtW"/>
+                                <toolbarItem reference="trZ-6O-kcd"/>
                                 <toolbarItem reference="CY0-Ie-HEQ"/>
+                                <toolbarItem reference="trZ-6O-kcd"/>
                             </defaultToolbarItems>
                         </toolbar>
                     </window>
@@ -948,6 +957,7 @@
         <image name="1_yuanya" width="150" height="150"/>
         <image name="add" width="200" height="200"/>
         <image name="converter" width="200" height="200"/>
+        <image name="recycle" width="200" height="200"/>
         <image name="start" width="200" height="180"/>
         <image name="微" width="200" height="200"/>
         <image name="终" width="200" height="200"/>
