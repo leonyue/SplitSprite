@@ -8,6 +8,8 @@
 
 #import "Task.h"
 
+NSNotificationName taskChangedNotif = @"taskChangedNotif";
+
 @implementation Task
 
 - (id)initWithFileUrl:(NSURL *)url {
@@ -36,6 +38,26 @@
     self.duration   = duration;
     self.generator   = generator;
     return YES;
+}
+
+// MARK: private
+- (void)sendNotification {
+    [[NSNotificationCenter defaultCenter] postNotificationName:taskChangedNotif object:self];
+}
+
+// MARK: Setter
+- (void)setBegin:(CMTime)begin {
+    if (CMTimeCompare(_begin, begin) != 0) {
+        _begin = begin;
+        [self sendNotification];
+    }
+}
+
+- (void)setEnd:(CMTime)end {
+    if (CMTimeCompare(_end, end) != 0) {
+        _end = end;
+        [self sendNotification];
+    }
 }
 
 @end

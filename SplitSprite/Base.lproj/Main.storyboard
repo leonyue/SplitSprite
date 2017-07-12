@@ -803,7 +803,7 @@
                                             <connections>
                                                 <outlet property="dataSource" destination="XfG-lQ-9wD" id="Fqt-Wa-Vef"/>
                                                 <outlet property="delegate" destination="XfG-lQ-9wD" id="Ca9-3e-mdN"/>
-                                                <segue destination="FKu-cA-VVC" kind="modal" id="ZF9-W9-qZo"/>
+                                                <segue destination="FKu-cA-VVC" kind="modal" identifier="gotoSettingSegue" id="ZF9-W9-qZo"/>
                                             </connections>
                                         </tableView>
                                     </subviews>
@@ -907,10 +907,10 @@
             </objects>
             <point key="canvasLocation" x="198" y="845"/>
         </scene>
-        <!--View Controller-->
+        <!--Adjust View Controller-->
         <scene sceneID="74v-ef-Fff">
             <objects>
-                <viewController id="fGW-Gy-Jha" sceneMemberID="viewController">
+                <viewController id="fGW-Gy-Jha" customClass="AdjustViewController" sceneMemberID="viewController">
                     <customView key="view" id="kF9-EK-OUt">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="269"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -935,6 +935,9 @@
                             <constraint firstItem="dBE-py-BVc" firstAttribute="top" secondItem="hHU-fF-Vjr" secondAttribute="bottom" id="zpZ-Jf-FKL"/>
                         </constraints>
                     </customView>
+                    <connections>
+                        <outlet property="playerView" destination="hHU-fF-Vjr" id="LJ8-aZ-fVB"/>
+                    </connections>
                 </viewController>
                 <customObject id="XS2-uw-svo" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
