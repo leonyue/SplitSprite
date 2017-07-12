@@ -666,12 +666,12 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" customClass="WindowController" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="SPLIT SPRITE by leon yue" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <toolbar key="toolbar" implicitIdentifier="8FCE8919-F709-4DF2-AB1D-4DC5AC74F9A6" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="small" id="YsK-DB-VQA">
+                        <toolbar key="toolbar" implicitIdentifier="8FCE8919-F709-4DF2-AB1D-4DC5AC74F9A6" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="small" id="YsK-DB-VQA" customClass="ToolBar">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="FQj-5e-NYo"/>
                                 <toolbarItem implicitItemIdentifier="36AC1A1E-231B-4D00-82AF-080B6388DA67" label="Add" paletteLabel="Add" tag="-1" image="add" id="8Up-oI-L3S">
@@ -698,7 +698,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="-416" y="300"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -864,25 +864,38 @@
         <!--Window Controller-->
         <scene sceneID="DvR-wB-xuR">
             <objects>
-                <windowController id="FKu-cA-VVC" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="kTN-pg-YVd">
+                <windowController id="FKu-cA-VVC" customClass="WindowController" sceneMemberID="viewController">
+                    <window key="window" title="ADJUSTING" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="kTN-pg-YVd">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="294" y="313" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
                         <toolbar key="toolbar" implicitIdentifier="C1F5604F-B615-4FFB-963B-03ED32C48E5E" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="small" id="Rk5-PQ-FFU">
                             <allowedToolbarItems>
-                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="8ut-CB-Cub"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="NOZ-dm-01R"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="Wnz-h8-gHn"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="trZ-6O-kcd"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="sCw-a5-o4e"/>
+                                <toolbarItem implicitItemIdentifier="C315CCC9-92B3-49DE-8FEA-98B18B2AB459" label="Set Start" paletteLabel="Set Start" tag="-1" image="start" id="DND-z7-CtW">
+                                    <connections>
+                                        <action selector="startClick:" target="FKu-cA-VVC" id="juh-LN-Lnv"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="95CBB2AC-3C3E-4C36-9A21-05FD64D0484A" label="Set End" paletteLabel="Set End" tag="-1" image="终" id="CY0-Ie-HEQ">
+                                    <connections>
+                                        <action selector="endClick:" target="FKu-cA-VVC" id="AC6-Lu-Mk6"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="2BA9D5A9-5CAC-4792-8F8F-93672A3CFF65" label="微" paletteLabel="微" tag="-1" image="微" id="9Bv-qB-Ifj">
+                                    <connections>
+                                        <action selector="minusClick:" target="FKu-cA-VVC" id="OuH-YT-TNn"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
-                                <toolbarItem reference="8ut-CB-Cub"/>
-                                <toolbarItem reference="NOZ-dm-01R"/>
+                                <toolbarItem reference="trZ-6O-kcd"/>
+                                <toolbarItem reference="9Bv-qB-Ifj"/>
                                 <toolbarItem reference="sCw-a5-o4e"/>
-                                <toolbarItem reference="Wnz-h8-gHn"/>
+                                <toolbarItem reference="DND-z7-CtW"/>
+                                <toolbarItem reference="CY0-Ie-HEQ"/>
                             </defaultToolbarItems>
                         </toolbar>
                     </window>
@@ -892,25 +905,48 @@
                 </windowController>
                 <customObject id="fmW-64-Id9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="264" y="835"/>
+            <point key="canvasLocation" x="198" y="845"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="74v-ef-Fff">
             <objects>
                 <viewController id="fGW-Gy-Jha" sceneMemberID="viewController">
-                    <avPlayerView key="view" controlsStyle="inline" id="Gia-QG-i44">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                    <customView key="view" id="kF9-EK-OUt">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="269"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    </avPlayerView>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="dBE-py-BVc">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="HfW-O1-Yn1"/>
+                                </constraints>
+                            </customView>
+                            <avPlayerView controlsStyle="inline" translatesAutoresizingMaskIntoConstraints="NO" id="hHU-fF-Vjr">
+                                <rect key="frame" x="0.0" y="40" width="450" height="229"/>
+                            </avPlayerView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="dBE-py-BVc" firstAttribute="leading" secondItem="kF9-EK-OUt" secondAttribute="leading" id="2RF-nC-PN7"/>
+                            <constraint firstItem="hHU-fF-Vjr" firstAttribute="leading" secondItem="kF9-EK-OUt" secondAttribute="leading" id="7Re-pY-kIB"/>
+                            <constraint firstAttribute="trailing" secondItem="hHU-fF-Vjr" secondAttribute="trailing" id="FkI-2c-2me"/>
+                            <constraint firstAttribute="trailing" secondItem="dBE-py-BVc" secondAttribute="trailing" id="eC2-sg-eNc"/>
+                            <constraint firstItem="hHU-fF-Vjr" firstAttribute="top" secondItem="kF9-EK-OUt" secondAttribute="top" id="imq-lB-mvk"/>
+                            <constraint firstAttribute="bottom" secondItem="dBE-py-BVc" secondAttribute="bottom" id="qoo-02-Yva"/>
+                            <constraint firstItem="dBE-py-BVc" firstAttribute="top" secondItem="hHU-fF-Vjr" secondAttribute="bottom" id="zpZ-Jf-FKL"/>
+                        </constraints>
+                    </customView>
                 </viewController>
                 <customObject id="XS2-uw-svo" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="686" y="1115"/>
+            <point key="canvasLocation" x="686" y="1229.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="1_yuanya" width="150" height="150"/>
         <image name="add" width="200" height="200"/>
         <image name="converter" width="200" height="200"/>
+        <image name="start" width="200" height="180"/>
+        <image name="微" width="200" height="200"/>
+        <image name="终" width="200" height="200"/>
     </resources>
 </document>

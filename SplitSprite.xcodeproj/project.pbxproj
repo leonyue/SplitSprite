@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1B27DACF1F15BF56005198CE /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B27DACE1F15BF56005198CE /* WindowController.m */; };
+		1B27DAD31F15C430005198CE /* ToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B27DAD21F15C430005198CE /* ToolBar.m */; };
+		1B27DAD71F15CBC1005198CE /* View.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B27DAD61F15CBC1005198CE /* View.m */; };
 		1BDDB6D21F14A0C800A50BAE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDB6D11F14A0C800A50BAE /* AppDelegate.m */; };
 		1BDDB6D51F14A0C800A50BAE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDB6D41F14A0C800A50BAE /* main.m */; };
 		1BDDB6D81F14A0C800A50BAE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDB6D71F14A0C800A50BAE /* ViewController.m */; };
@@ -19,6 +21,10 @@
 /* Begin PBXFileReference section */
 		1B27DACD1F15BF56005198CE /* WindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
 		1B27DACE1F15BF56005198CE /* WindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
+		1B27DAD11F15C430005198CE /* ToolBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolBar.h; sourceTree = "<group>"; };
+		1B27DAD21F15C430005198CE /* ToolBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToolBar.m; sourceTree = "<group>"; };
+		1B27DAD51F15CBC1005198CE /* View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
+		1B27DAD61F15CBC1005198CE /* View.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = View.m; sourceTree = "<group>"; };
 		1BDDB6CD1F14A0C800A50BAE /* SplitSprite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitSprite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BDDB6D01F14A0C800A50BAE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1BDDB6D11F14A0C800A50BAE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -43,6 +49,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B27DAD01F15C40A005198CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1B27DAD11F15C430005198CE /* ToolBar.h */,
+				1B27DAD21F15C430005198CE /* ToolBar.m */,
+				1B27DAD51F15CBC1005198CE /* View.h */,
+				1B27DAD61F15CBC1005198CE /* View.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1B27DADB1F15F344005198CE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1BDDB6D61F14A0C800A50BAE /* ViewController.h */,
+				1BDDB6D71F14A0C800A50BAE /* ViewController.m */,
+				1B27DACD1F15BF56005198CE /* WindowController.h */,
+				1B27DACE1F15BF56005198CE /* WindowController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		1BDDB6C41F14A0C600A50BAE = {
 			isa = PBXGroup;
 			children = (
@@ -64,10 +92,8 @@
 			children = (
 				1BDDB6D01F14A0C800A50BAE /* AppDelegate.h */,
 				1BDDB6D11F14A0C800A50BAE /* AppDelegate.m */,
-				1BDDB6D61F14A0C800A50BAE /* ViewController.h */,
-				1BDDB6D71F14A0C800A50BAE /* ViewController.m */,
-				1B27DACD1F15BF56005198CE /* WindowController.h */,
-				1B27DACE1F15BF56005198CE /* WindowController.m */,
+				1B27DADB1F15F344005198CE /* ViewController */,
+				1B27DAD01F15C40A005198CE /* View */,
 				1BDDB6E41F14AC1900A50BAE /* Model */,
 				1BDDB6DB1F14A0C800A50BAE /* Main.storyboard */,
 				1BDDB6DE1F14A0C800A50BAE /* Info.plist */,
@@ -165,9 +191,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B27DAD71F15CBC1005198CE /* View.m in Sources */,
 				1B27DACF1F15BF56005198CE /* WindowController.m in Sources */,
 				1BDDB6E71F14AC4B00A50BAE /* Task.m in Sources */,
 				1BDDB6D81F14A0C800A50BAE /* ViewController.m in Sources */,
+				1B27DAD31F15C430005198CE /* ToolBar.m in Sources */,
 				1BDDB6D51F14A0C800A50BAE /* main.m in Sources */,
 				1BDDB6D21F14A0C800A50BAE /* AppDelegate.m in Sources */,
 			);
