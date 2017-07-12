@@ -665,12 +665,32 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                <windowController id="B8D-0N-5wS" customClass="WindowController" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <toolbar key="toolbar" implicitIdentifier="8FCE8919-F709-4DF2-AB1D-4DC5AC74F9A6" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="small" id="YsK-DB-VQA">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="FQj-5e-NYo"/>
+                                <toolbarItem implicitItemIdentifier="36AC1A1E-231B-4D00-82AF-080B6388DA67" label="Add" paletteLabel="Add" tag="-1" image="add" id="8Up-oI-L3S">
+                                    <connections>
+                                        <action selector="addTask:" target="B8D-0N-5wS" id="KJd-s4-2jv"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="1ADDF66D-7C21-4743-9A48-4F811B4080E7" label="convert" paletteLabel="convert" tag="-1" image="converter" id="Dme-11-Dfa">
+                                    <connections>
+                                        <action selector="convertClick:" target="B8D-0N-5wS" id="2dr-K8-D1c"/>
+                                    </connections>
+                                </toolbarItem>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="FQj-5e-NYo"/>
+                                <toolbarItem reference="8Up-oI-L3S"/>
+                                <toolbarItem reference="Dme-11-Dfa"/>
+                            </defaultToolbarItems>
+                        </toolbar>
                     </window>
                     <connections>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
@@ -689,13 +709,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="62" horizontalPageScroll="10" verticalLineScroll="62" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltn-er-Y30">
-                                <rect key="frame" x="0.0" y="40" width="548" height="316"/>
+                                <rect key="frame" x="0.0" y="40" width="548" height="356"/>
                                 <clipView key="contentView" id="jER-W9-dLB">
-                                    <rect key="frame" x="1" y="0.0" width="546" height="315"/>
+                                    <rect key="frame" x="1" y="0.0" width="546" height="355"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="60" headerView="580-Xx-l1K" viewBased="YES" id="Y3L-ab-RSK">
-                                            <rect key="frame" x="0.0" y="0.0" width="546" height="292"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="546" height="332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -783,7 +803,7 @@
                                             <connections>
                                                 <outlet property="dataSource" destination="XfG-lQ-9wD" id="Fqt-Wa-Vef"/>
                                                 <outlet property="delegate" destination="XfG-lQ-9wD" id="Ca9-3e-mdN"/>
-                                                <segue destination="AfU-O3-nV4" kind="modal" id="vZV-gK-Ucf"/>
+                                                <segue destination="FKu-cA-VVC" kind="modal" id="ZF9-W9-qZo"/>
                                             </connections>
                                         </tableView>
                                     </subviews>
@@ -801,43 +821,11 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="dYT-06-1BK">
-                                <rect key="frame" x="0.0" y="356" width="548" height="40"/>
-                                <subviews>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="31g-sB-vKU">
-                                        <rect key="frame" x="513" y="5" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="31g-sB-vKU" secondAttribute="height" id="SZw-D4-reu"/>
-                                        </constraints>
-                                        <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="2di-Wy-XS9">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="addButtonClick:" target="XfG-lQ-9wD" id="4hi-ee-R6x"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="31g-sB-vKU" secondAttribute="bottom" constant="5" id="KPD-9I-inm"/>
-                                    <constraint firstItem="31g-sB-vKU" firstAttribute="centerY" secondItem="dYT-06-1BK" secondAttribute="centerY" id="NHq-CP-eMf"/>
-                                    <constraint firstItem="31g-sB-vKU" firstAttribute="top" secondItem="dYT-06-1BK" secondAttribute="top" constant="5" id="NeD-bJ-65s"/>
-                                    <constraint firstAttribute="height" constant="40" id="cn4-1H-AaG"/>
-                                    <constraint firstAttribute="trailing" secondItem="31g-sB-vKU" secondAttribute="trailing" constant="5" id="dUz-Ua-9F6"/>
-                                </constraints>
-                            </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="Sxc-fB-iNp">
                                 <rect key="frame" x="0.0" y="0.0" width="548" height="40"/>
                                 <subviews>
-                                    <button horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Kl-D9-FZw">
-                                        <rect key="frame" x="460" y="2" width="89" height="32"/>
-                                        <buttonCell key="cell" type="push" title="Convert" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Hsq-ry-tzW">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </button>
                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wlH-p8-s9t">
-                                        <rect key="frame" x="3" y="5" width="460" height="30"/>
+                                        <rect key="frame" x="3" y="5" width="4" height="30"/>
                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="KBy-ar-kRa">
                                             <font key="font" metaFont="system" size="8"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -850,29 +838,21 @@
                                     <constraint firstItem="wlH-p8-s9t" firstAttribute="top" secondItem="Sxc-fB-iNp" secondAttribute="top" constant="5" id="7EO-FZ-ONr"/>
                                     <constraint firstItem="wlH-p8-s9t" firstAttribute="leading" secondItem="Sxc-fB-iNp" secondAttribute="leading" constant="5" id="Dtb-Y4-jcE"/>
                                     <constraint firstAttribute="height" constant="40" id="KYD-Yq-vcI"/>
-                                    <constraint firstItem="5Kl-D9-FZw" firstAttribute="leading" secondItem="wlH-p8-s9t" secondAttribute="trailing" constant="5" id="iJn-Ud-pf2"/>
-                                    <constraint firstAttribute="trailing" secondItem="5Kl-D9-FZw" secondAttribute="trailing" constant="5" id="ra1-IZ-bdh"/>
-                                    <constraint firstItem="5Kl-D9-FZw" firstAttribute="centerY" secondItem="Sxc-fB-iNp" secondAttribute="centerY" id="zHM-fg-FOq"/>
                                 </constraints>
                             </customView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="ltn-er-Y30" firstAttribute="top" secondItem="dYT-06-1BK" secondAttribute="bottom" id="G3W-3v-mBH"/>
+                            <constraint firstItem="ltn-er-Y30" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="Faw-LZ-oPa"/>
                             <constraint firstItem="Sxc-fB-iNp" firstAttribute="top" secondItem="ltn-er-Y30" secondAttribute="bottom" id="Hgs-IP-op7"/>
                             <constraint firstItem="Sxc-fB-iNp" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="KKx-OE-oy5"/>
-                            <constraint firstItem="dYT-06-1BK" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="Kgh-mr-95O"/>
-                            <constraint firstItem="dYT-06-1BK" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="TBX-1R-aId"/>
                             <constraint firstAttribute="bottom" secondItem="Sxc-fB-iNp" secondAttribute="bottom" id="XGx-2B-lM9"/>
                             <constraint firstItem="ltn-er-Y30" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="YjA-gn-FR9"/>
-                            <constraint firstAttribute="trailing" secondItem="dYT-06-1BK" secondAttribute="trailing" id="iTD-Zw-bIf"/>
                             <constraint firstAttribute="trailing" secondItem="ltn-er-Y30" secondAttribute="trailing" id="nI6-7c-TAe"/>
                             <constraint firstAttribute="trailing" secondItem="Sxc-fB-iNp" secondAttribute="trailing" id="zmm-Wi-s5v"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addButton" destination="31g-sB-vKU" id="Sug-iX-iSi"/>
                         <outlet property="footerView" destination="Sxc-fB-iNp" id="TDg-wg-dDv"/>
-                        <outlet property="headerView" destination="dYT-06-1BK" id="eBT-h4-lpr"/>
                         <outlet property="informationNalTextField" destination="wlH-p8-s9t" id="wtg-bT-5v9"/>
                         <outlet property="tableView" destination="Y3L-ab-RSK" id="Ef9-2a-S79"/>
                     </connections>
@@ -881,33 +861,56 @@
             </objects>
             <point key="canvasLocation" x="-416" y="835"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="ZL4-r3-2Sb">
+        <!--Window Controller-->
+        <scene sceneID="DvR-wB-xuR">
             <objects>
-                <viewController id="AfU-O3-nV4" sceneMemberID="viewController">
-                    <view key="view" id="ciK-pH-Q7r">
-                        <rect key="frame" x="0.0" y="0.0" width="570" height="333"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <avPlayerView controlsStyle="inline" translatesAutoresizingMaskIntoConstraints="NO" id="qcJ-hb-iay">
-                                <rect key="frame" x="0.0" y="0.0" width="570" height="333"/>
-                            </avPlayerView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="qcJ-hb-iay" firstAttribute="leading" secondItem="ciK-pH-Q7r" secondAttribute="leading" id="HpW-ZC-i1M"/>
-                            <constraint firstAttribute="trailing" secondItem="qcJ-hb-iay" secondAttribute="trailing" id="TeY-YU-0rp"/>
-                            <constraint firstAttribute="bottom" secondItem="qcJ-hb-iay" secondAttribute="bottom" id="VJj-vm-wSZ"/>
-                            <constraint firstItem="qcJ-hb-iay" firstAttribute="top" secondItem="ciK-pH-Q7r" secondAttribute="top" id="sms-Gx-lXi"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <customObject id="31y-Gy-B6u" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <windowController id="FKu-cA-VVC" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="kTN-pg-YVd">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="294" y="313" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+                        <toolbar key="toolbar" implicitIdentifier="C1F5604F-B615-4FFB-963B-03ED32C48E5E" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="small" id="Rk5-PQ-FFU">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="8ut-CB-Cub"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="NOZ-dm-01R"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="Wnz-h8-gHn"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="trZ-6O-kcd"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="sCw-a5-o4e"/>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="8ut-CB-Cub"/>
+                                <toolbarItem reference="NOZ-dm-01R"/>
+                                <toolbarItem reference="sCw-a5-o4e"/>
+                                <toolbarItem reference="Wnz-h8-gHn"/>
+                            </defaultToolbarItems>
+                        </toolbar>
+                    </window>
+                    <connections>
+                        <segue destination="fGW-Gy-Jha" kind="relationship" relationship="window.shadowedContentViewController" id="OZG-Tz-ts9"/>
+                    </connections>
+                </windowController>
+                <customObject id="fmW-64-Id9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="315" y="747"/>
+            <point key="canvasLocation" x="264" y="835"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="74v-ef-Fff">
+            <objects>
+                <viewController id="fGW-Gy-Jha" sceneMemberID="viewController">
+                    <avPlayerView key="view" controlsStyle="inline" id="Gia-QG-i44">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </avPlayerView>
+                </viewController>
+                <customObject id="XS2-uw-svo" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="686" y="1115"/>
         </scene>
     </scenes>
     <resources>
         <image name="1_yuanya" width="150" height="150"/>
-        <image name="NSAddTemplate" width="11" height="11"/>
+        <image name="add" width="200" height="200"/>
+        <image name="converter" width="200" height="200"/>
     </resources>
 </document>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B27DACF1F15BF56005198CE /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B27DACE1F15BF56005198CE /* WindowController.m */; };
 		1BDDB6D21F14A0C800A50BAE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDB6D11F14A0C800A50BAE /* AppDelegate.m */; };
 		1BDDB6D51F14A0C800A50BAE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDB6D41F14A0C800A50BAE /* main.m */; };
 		1BDDB6D81F14A0C800A50BAE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDB6D71F14A0C800A50BAE /* ViewController.m */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B27DACD1F15BF56005198CE /* WindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
+		1B27DACE1F15BF56005198CE /* WindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
 		1BDDB6CD1F14A0C800A50BAE /* SplitSprite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitSprite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BDDB6D01F14A0C800A50BAE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1BDDB6D11F14A0C800A50BAE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -63,6 +66,8 @@
 				1BDDB6D11F14A0C800A50BAE /* AppDelegate.m */,
 				1BDDB6D61F14A0C800A50BAE /* ViewController.h */,
 				1BDDB6D71F14A0C800A50BAE /* ViewController.m */,
+				1B27DACD1F15BF56005198CE /* WindowController.h */,
+				1B27DACE1F15BF56005198CE /* WindowController.m */,
 				1BDDB6E41F14AC1900A50BAE /* Model */,
 				1BDDB6DB1F14A0C800A50BAE /* Main.storyboard */,
 				1BDDB6DE1F14A0C800A50BAE /* Info.plist */,
@@ -160,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B27DACF1F15BF56005198CE /* WindowController.m in Sources */,
 				1BDDB6E71F14AC4B00A50BAE /* Task.m in Sources */,
 				1BDDB6D81F14A0C800A50BAE /* ViewController.m in Sources */,
 				1BDDB6D51F14A0C800A50BAE /* main.m in Sources */,
@@ -313,6 +319,7 @@
 				1BDDB6E31F14A0C800A50BAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

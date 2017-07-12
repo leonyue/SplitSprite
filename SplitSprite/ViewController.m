@@ -19,9 +19,7 @@ static NSString *kTaskCellIdentifier   = @"taskCell";
 @property (nonatomic, strong) NSMutableArray *tasks;
 
 @property (weak) IBOutlet NSTableView *tableView;
-@property (weak) IBOutlet NSButton    *addButton;
 @property (weak) IBOutlet NSTextField *informationNalTextField;
-@property (weak) IBOutlet NSView *headerView;
 @property (weak) IBOutlet NSView *footerView;
 
 @end
@@ -34,15 +32,30 @@ static NSString *kTaskCellIdentifier   = @"taskCell";
     // Do any additional setup after loading the view.
 }
 
+- (void)viewDidAppear {
+    [super viewDidAppear];
+    [self setUpWindowToolBarAction];
+}
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
-
-    // Update the view, if already loaded.
 }
 
-// MARK: IBAction
-- (IBAction)addButtonClick:(id)sender {
+// MARK: private
+
+- (void)setUpWindowToolBarAction {
+    __weak typeof(self) weakSelf = self;
+    void (^addClick)() = ^(){
+        [weakSelf addClick];
+    };
+    void (^convertClick)() = ^(){
+        [weakSelf convertClick];
+    };
+    [self.view.window.windowController setValue:[addClick copy] forKey:@"addClick"];
+    [self.view.window.windowController setValue:[convertClick copy] forKey:@"convertClick"];
+}
+
+- (void)addClick {
     NSOpenPanel *panel = [NSOpenPanel openPanel];
     panel.allowsMultipleSelection = YES;
     __weak typeof(self) weakSelf = self;
@@ -69,6 +82,10 @@ static NSString *kTaskCellIdentifier   = @"taskCell";
             }
         }
     }];
+}
+
+- (void)convertClick {
+    //TODO
 }
 
 // MARK: TableView DataSource & Delegate
