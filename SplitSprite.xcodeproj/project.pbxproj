@@ -12,6 +12,9 @@
 		1B27DAD71F15CBC1005198CE /* View.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B27DAD61F15CBC1005198CE /* View.m */; };
 		1B27DADE1F15F7E5005198CE /* NSString+MovieTimeSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B27DADC1F15F7E5005198CE /* NSString+MovieTimeSupport.m */; };
 		1B27DAE11F15F8FB005198CE /* AdjustViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B27DAE01F15F8FB005198CE /* AdjustViewController.m */; };
+		1B27DAE41F1606E2005198CE /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1B27DAE31F1606E2005198CE /* ffmpeg */; };
+		1B27DAE71F16071A005198CE /* TaskExportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B27DAE61F16071A005198CE /* TaskExportManager.m */; };
+		1B27DAEA1F160A2B005198CE /* Taskit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B27DAE81F160A2B005198CE /* Taskit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1BDDB6D21F14A0C800A50BAE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDB6D11F14A0C800A50BAE /* AppDelegate.m */; };
 		1BDDB6D51F14A0C800A50BAE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDB6D41F14A0C800A50BAE /* main.m */; };
 		1BDDB6D81F14A0C800A50BAE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDB6D71F14A0C800A50BAE /* ViewController.m */; };
@@ -31,6 +34,11 @@
 		1B27DADD1F15F7E5005198CE /* NSString+MovieTimeSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MovieTimeSupport.h"; path = "../../../yuneecapp-ios/YuneecApp/YuneecApp/App/Gallery/MovieMake/Category/NSString+MovieTimeSupport.h"; sourceTree = "<group>"; };
 		1B27DADF1F15F8FB005198CE /* AdjustViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdjustViewController.h; sourceTree = "<group>"; };
 		1B27DAE01F15F8FB005198CE /* AdjustViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdjustViewController.m; sourceTree = "<group>"; };
+		1B27DAE31F1606E2005198CE /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = ffmpeg; path = ../../../../Downloads/ffmpeg; sourceTree = "<group>"; };
+		1B27DAE51F16071A005198CE /* TaskExportManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskExportManager.h; sourceTree = "<group>"; };
+		1B27DAE61F16071A005198CE /* TaskExportManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskExportManager.m; sourceTree = "<group>"; };
+		1B27DAE81F160A2B005198CE /* Taskit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Taskit.m; path = "../../../../Downloads/taskit-master/Taskit.m"; sourceTree = "<group>"; };
+		1B27DAE91F160A2B005198CE /* Taskit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Taskit.h; path = "../../../../Downloads/taskit-master/Taskit.h"; sourceTree = "<group>"; };
 		1BDDB6CD1F14A0C800A50BAE /* SplitSprite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitSprite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BDDB6D01F14A0C800A50BAE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1BDDB6D11F14A0C800A50BAE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -79,6 +87,16 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		1B27DAE21F1606D2005198CE /* Uti */ = {
+			isa = PBXGroup;
+			children = (
+				1B27DAE91F160A2B005198CE /* Taskit.h */,
+				1B27DAE81F160A2B005198CE /* Taskit.m */,
+				1B27DAE31F1606E2005198CE /* ffmpeg */,
+			);
+			path = Uti;
+			sourceTree = "<group>";
+		};
 		1BDDB6C41F14A0C600A50BAE = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +116,7 @@
 		1BDDB6CF1F14A0C800A50BAE /* SplitSprite */ = {
 			isa = PBXGroup;
 			children = (
+				1B27DAE21F1606D2005198CE /* Uti */,
 				1BDDB6D01F14A0C800A50BAE /* AppDelegate.h */,
 				1BDDB6D11F14A0C800A50BAE /* AppDelegate.m */,
 				1B27DADB1F15F344005198CE /* ViewController */,
@@ -126,6 +145,8 @@
 				1B27DADC1F15F7E5005198CE /* NSString+MovieTimeSupport.m */,
 				1BDDB6E51F14AC4B00A50BAE /* Task.h */,
 				1BDDB6E61F14AC4B00A50BAE /* Task.m */,
+				1B27DAE51F16071A005198CE /* TaskExportManager.h */,
+				1B27DAE61F16071A005198CE /* TaskExportManager.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BDDB6E91F14B54D00A50BAE /* Assets.xcassets in Resources */,
+				1B27DAE41F1606E2005198CE /* ffmpeg in Resources */,
 				1BDDB6DD1F14A0C800A50BAE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +223,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B27DAE71F16071A005198CE /* TaskExportManager.m in Sources */,
+				1B27DAEA1F160A2B005198CE /* Taskit.m in Sources */,
 				1B27DAD71F15CBC1005198CE /* View.m in Sources */,
 				1B27DACF1F15BF56005198CE /* WindowController.m in Sources */,
 				1BDDB6E71F14AC4B00A50BAE /* Task.m in Sources */,

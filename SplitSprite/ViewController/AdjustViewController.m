@@ -29,6 +29,17 @@
     [self setUpWindowToolBarAction];
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"status"]) {
+        if (self.player.currentItem.status == AVPlayerItemStatusReadyToPlay) {
+            __weak typeof(self) weakSelf = self;
+            [self.player seekToTime:self.edittingTask.begin completionHandler:^(BOOL finished) {
+                [weakSelf.player play];
+            }];
+        }
+    }
+}
+
 // MARK: private
 
 - (void)setUpPlayerObserver {
@@ -46,10 +57,7 @@
 - (void)updatePlayerItem {
     AVPlayerItem *item = [AVPlayerItem playerItemWithURL:self.edittingTask.url];
     [self.player replaceCurrentItemWithPlayerItem:item];
-    __weak typeof(self) weakSelf = self;
-    [self.player seekToTime:self.edittingTask.begin completionHandler:^(BOOL finished) {
-        [weakSelf.player play];
-    }];
+    [item addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
     
 }
 
