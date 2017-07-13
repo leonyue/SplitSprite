@@ -54,10 +54,10 @@ static TaskExportManager *_sharedManager;
     [task.arguments addObject:vTask.url.resourceSpecifier];
     [task.arguments addObject:@"-ss"];
     NSString *ss = [NSString stringWithCMTime:vTask.begin];
-    [task.arguments addObject:ss];
+    [task.arguments addObject:[NSString stringWithFormat:@"%f",CMTimeGetSeconds(vTask.begin)]];
     [task.arguments addObject:@"-to"];
     NSString *tt = [NSString stringWithCMTime:vTask.end];
-    [task.arguments addObject:tt];
+    [task.arguments addObject:[NSString stringWithFormat:@"%f",CMTimeGetSeconds(vTask.end)]];
     [task.arguments addObject:@"-vcodec"];
     [task.arguments addObject:@"copy"];
     [task.arguments addObject:@"-acodec"];
@@ -74,9 +74,6 @@ static TaskExportManager *_sharedManager;
     
     [task.arguments addObject:@"-y"];
     
-    
-    NSLog(@"task.argument:%@",task.arguments);
-    NSLog(@"task.exe:%@",task.launchPath);
     __weak typeof(self) weakSelf = self;
     task.receivedOutputString = ^void(NSString *output) {
         NSLog(@"output*************%@", output);

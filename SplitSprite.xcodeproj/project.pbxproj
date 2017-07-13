@@ -15,6 +15,7 @@
 		1B27DAE41F1606E2005198CE /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1B27DAE31F1606E2005198CE /* ffmpeg */; };
 		1B27DAE71F16071A005198CE /* TaskExportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B27DAE61F16071A005198CE /* TaskExportManager.m */; };
 		1B27DAEA1F160A2B005198CE /* Taskit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B27DAE81F160A2B005198CE /* Taskit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1B27DAED1F170A60005198CE /* TaskTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B27DAEC1F170A60005198CE /* TaskTableCellView.m */; };
 		1BDDB6D21F14A0C800A50BAE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDB6D11F14A0C800A50BAE /* AppDelegate.m */; };
 		1BDDB6D51F14A0C800A50BAE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDB6D41F14A0C800A50BAE /* main.m */; };
 		1BDDB6D81F14A0C800A50BAE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDB6D71F14A0C800A50BAE /* ViewController.m */; };
@@ -39,6 +40,8 @@
 		1B27DAE61F16071A005198CE /* TaskExportManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskExportManager.m; sourceTree = "<group>"; };
 		1B27DAE81F160A2B005198CE /* Taskit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Taskit.m; path = "../../../../Downloads/taskit-master/Taskit.m"; sourceTree = "<group>"; };
 		1B27DAE91F160A2B005198CE /* Taskit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Taskit.h; path = "../../../../Downloads/taskit-master/Taskit.h"; sourceTree = "<group>"; };
+		1B27DAEB1F170A60005198CE /* TaskTableCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskTableCellView.h; sourceTree = "<group>"; };
+		1B27DAEC1F170A60005198CE /* TaskTableCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskTableCellView.m; sourceTree = "<group>"; };
 		1BDDB6CD1F14A0C800A50BAE /* SplitSprite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitSprite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BDDB6D01F14A0C800A50BAE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1BDDB6D11F14A0C800A50BAE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -70,6 +73,8 @@
 				1B27DAD21F15C430005198CE /* ToolBar.m */,
 				1B27DAD51F15CBC1005198CE /* View.h */,
 				1B27DAD61F15CBC1005198CE /* View.m */,
+				1B27DAEB1F170A60005198CE /* TaskTableCellView.h */,
+				1B27DAEC1F170A60005198CE /* TaskTableCellView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 				1B27DAEA1F160A2B005198CE /* Taskit.m in Sources */,
 				1B27DAD71F15CBC1005198CE /* View.m in Sources */,
 				1B27DACF1F15BF56005198CE /* WindowController.m in Sources */,
+				1B27DAED1F170A60005198CE /* TaskTableCellView.m in Sources */,
 				1BDDB6E71F14AC4B00A50BAE /* Task.m in Sources */,
 				1BDDB6D81F14A0C800A50BAE /* ViewController.m in Sources */,
 				1B27DAD31F15C430005198CE /* ToolBar.m in Sources */,

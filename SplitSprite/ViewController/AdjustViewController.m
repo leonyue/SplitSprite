@@ -14,6 +14,7 @@
 
 @property (weak) IBOutlet AVPlayerView *playerView;
 @property (nonatomic, strong) AVPlayer *player;
+@property (nonatomic, strong) id observer;
 
 @end
 
@@ -27,6 +28,16 @@
 - (void)viewDidAppear {
     [super viewDidAppear];
     [self setUpWindowToolBarAction];
+}
+
+- (void)dealloc {
+    [self.player pause];
+    [self.player removeTimeObserver:self.observer];
+    [self removeObserver:self forKeyPath:@"status"];
+    self.observer = nil;
+    self.player = nil;
+    self.playerView.player = nil;
+    NSLog(@"dealloc");
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
@@ -44,7 +55,7 @@
 
 - (void)setUpPlayerObserver {
     __weak typeof(self) weakSelf = self;
-    [self.player addPeriodicTimeObserverForInterval:CMTimeMakeWithSeconds(0.01, 300) queue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
+    id observer = [self.player addPeriodicTimeObserverForInterval:CMTimeMakeWithSeconds(0.01, 300) queue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
                                          usingBlock:^(CMTime time) {
                                              if (CMTimeCompare(weakSelf.edittingTask.end, time) <= 0) {
                                                  [weakSelf.player seekToTime:weakSelf.edittingTask.begin completionHandler:^(BOOL finished) {
@@ -52,6 +63,7 @@
                                                  }];
                                              }
                                          }];
+    self.observer = observer;
 }
 
 - (void)updatePlayerItem {

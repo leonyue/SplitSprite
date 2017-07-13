@@ -19,6 +19,11 @@
     
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
 }
+
+- (void)dealloc {
+    NSLog(@"dealloc");
+}
+
 - (IBAction)addTask:(id)sender {
     if (self.addClick) {
         self.addClick();

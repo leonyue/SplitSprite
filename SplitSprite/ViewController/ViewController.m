@@ -28,6 +28,8 @@ static NSString *kGotoSettingSegueIdentifier = @"gotoSettingSegue";
 
 @property (nonatomic, weak) Task *currentTask;
 
+@property (nonatomic, assign) BOOL shouldPerformSegue;
+
 @end
 
 @implementation ViewController
@@ -36,7 +38,7 @@ static NSString *kGotoSettingSegueIdentifier = @"gotoSettingSegue";
     [super viewDidLoad];
     _tasks = [NSMutableArray new];
     [self setUpObserver];
-    // Do any additional setup after loading the view.
+    [self setUp];
 }
 
 - (void)viewDidAppear {
@@ -54,6 +56,29 @@ static NSString *kGotoSettingSegueIdentifier = @"gotoSettingSegue";
         adj.edittingTask = self.currentTask;
     }
 }
+
+//- (BOOL)shouldPerformSegueWithIdentifier:(NSStoryboardSegueIdentifier)identifier sender:(id)sender {
+//    if ([identifier isEqualToString:kGotoSettingSegueIdentifier]) {
+//        return self.shouldPerformSegue;
+//    }
+//    return YES;
+//}
+
+// MARK: IBAction
+
+- (void)setUp {
+    NSMenuItem *edit = [[NSApplication sharedApplication].menu itemWithTitle:@"Edit"];
+    NSMenu *editMenu = edit.submenu;
+    NSMenuItem *delete = [editMenu itemWithTitle:@"Delete"];
+    [delete setAction:@selector(deleteBtnClick)];
+}
+
+- (IBAction)deleteBtnClick {
+    NSIndexSet  *indexSet = self.tableView.selectedRowIndexes;
+    [self.tasks removeObjectsAtIndexes:indexSet];
+    [self.tableView reloadData];
+}
+
 
 // MARK: private
 
@@ -118,7 +143,6 @@ static NSString *kGotoSettingSegueIdentifier = @"gotoSettingSegue";
 }
 
 - (void)convertClick {
-    //TODO
     [[TaskExportManager sharedManager] addTasks:self.tasks];
 }
 
@@ -142,13 +166,22 @@ static NSString *kGotoSettingSegueIdentifier = @"gotoSettingSegue";
     }
     if ([tableColumn.identifier isEqualToString:kTaskColumnIdentifier]) {
         NSView *taskCell = [tableView makeViewWithIdentifier:kTaskCellIdentifier owner:self];
-        NSImageView *imageView = [taskCell viewWithTag:1];
+        
+        NSButton *imageButton = [taskCell viewWithTag:1];
         NSTextField *textField = [taskCell viewWithTag:2];
         Task *task = self.tasks[row];
+        __weak typeof(self) weakSelf = self;
+        void(^detailClick)() = ^{
+            weakSelf.currentTask = task;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf performSegueWithIdentifier:kGotoSettingSegueIdentifier sender:nil];
+            });
+        };
+        [taskCell setValue:[detailClick copy] forKey:@"detailClick"];
         dispatch_async(dispatch_get_main_queue(), ^{
             textField.attributedStringValue = [[NSAttributedString alloc]
                                                initWithString:[NSString stringWithFormat:
-                                                               @"%@\n%@\n%@  ->  %@",
+                                                               @"     %@\n     %@\n     %@  ->  %@",
                                                                task.url,
                                                                [NSString stringWithCMTime:task.duration],
                                                                [NSString stringWithCMTime:task.begin],
@@ -160,8 +193,8 @@ static NSString *kGotoSettingSegueIdentifier = @"gotoSettingSegue";
         [task.generator generateCGImagesAsynchronouslyForTimes:@[[NSValue valueWithCMTime:kCMTimeZero]] completionHandler:^(CMTime requestedTime, CGImageRef  _Nullable image, CMTime actualTime, AVAssetImageGeneratorResult result, NSError * _Nullable error) {
             CGImageRef icopy = CGImageCreateCopy(image);
             dispatch_async(dispatch_get_main_queue(), ^{
-                NSImage *imageNS = [[NSImage alloc] initWithCGImage:icopy size:imageView.bounds.size];
-                imageView.image = imageNS;
+                NSImage *imageNS = [[NSImage alloc] initWithCGImage:icopy size:imageButton.bounds.size];
+                imageButton.image = imageNS;
                 CGImageRelease(icopy);
             });
         }];
