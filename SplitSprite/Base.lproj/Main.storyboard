@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.AVKitIBPlugin" version="11762"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <plugIn identifier="com.apple.AVKitIBPlugin" version="13122.17"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13122.17"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -701,7 +701,7 @@ CA
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-416" y="300"/>
+            <point key="canvasLocation" x="-728" y="222"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -741,7 +741,7 @@ CA
                                                             <rect key="frame" x="1" y="1" width="42" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t5m-rS-tJ3">
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t5m-rS-tJ3">
                                                                     <rect key="frame" x="0.0" y="0.0" width="42" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="2hl-yP-kQl">
@@ -787,7 +787,7 @@ CA
                                                                         <action selector="clickBtn:" target="2Vc-9M-Rtt" id="m74-2P-tos"/>
                                                                     </connections>
                                                                 </button>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="Qqm-he-Exl">
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" tag="2" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qqm-he-Exl">
                                                                     <rect key="frame" x="23" y="5" width="465" height="14"/>
                                                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="loading..." id="btd-Re-KYk">
                                                                         <font key="font" metaFont="smallSystem"/>
@@ -832,7 +832,7 @@ CA
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="Sxc-fB-iNp">
                                 <rect key="frame" x="0.0" y="0.0" width="541" height="40"/>
                                 <subviews>
-                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="wlH-p8-s9t">
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wlH-p8-s9t">
                                         <rect key="frame" x="3" y="5" width="4" height="30"/>
                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="KBy-ar-kRa">
                                             <font key="font" metaFont="system" size="8"/>
@@ -868,7 +868,7 @@ CA
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-419.5" y="793.5"/>
+            <point key="canvasLocation" x="-728" y="649"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="DvR-wB-xuR">
@@ -923,7 +923,7 @@ CA
                 </windowController>
                 <customObject id="fmW-64-Id9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="205" y="815"/>
+            <point key="canvasLocation" x="-153" y="222"/>
         </scene>
         <!--Adjust View Controller-->
         <scene sceneID="74v-ef-Fff">
@@ -959,7 +959,7 @@ CA
                 </viewController>
                 <customObject id="XS2-uw-svo" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="198" y="1255"/>
+            <point key="canvasLocation" x="-153" y="649"/>
         </scene>
     </scenes>
     <resources>
