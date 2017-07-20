@@ -12,6 +12,6 @@
 
 + (TaskExportManager *)sharedManager;
 
-- (BOOL)addTasks:(NSArray<Task *> *)tasks;
+- (BOOL)addTasks:(NSArray<Task *> *)tasks converting:(void(^)(Task* convertingTask))convertingBlock;
 
 @end

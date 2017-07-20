@@ -16,6 +16,7 @@ static TaskExportManager *_sharedManager;
 
 @property (atomic, assign) BOOL isExporting;
 @property (nonatomic, strong) NSMutableArray<Task *> *tasks;
+@property (nonatomic, copy  ) void(^convertingBlock)(Task *);
 
 @end;
 
@@ -31,10 +32,11 @@ static TaskExportManager *_sharedManager;
 }
 
 
-- (BOOL)addTasks:(NSArray<Task *> *)tasks {
+- (BOOL)addTasks:(NSArray<Task *> *)tasks converting:(void (^)(Task *))convertingBlock {
     if (self.tasks.count != 0) {
         return NO;
     }
+    self.convertingBlock = convertingBlock;
     [self.tasks addObjectsFromArray:tasks];
     [self downloadTask];
     return YES;
@@ -75,12 +77,16 @@ static TaskExportManager *_sharedManager;
     [task.arguments addObject:@"-y"];
     
     __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        weakSelf.convertingBlock(vTask);
+    });
     task.receivedOutputString = ^void(NSString *output) {
         NSLog(@"output*************%@", output);
     };
     task.receivedErrorString = ^(NSString *errString) {
         
         NSLog(@"error**************:%@",errString);
+        weakSelf.convertingBlock(nil);
         [weakSelf downloadTask];
     };
     [task launch];

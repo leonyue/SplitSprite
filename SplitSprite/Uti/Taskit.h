@@ -3,7 +3,7 @@
 //  Licensed under the WTFPL: http://sam.zoy.org/wtfpl/
 
 #import <Foundation/Foundation.h>
-
+#define TASKIT_BACKGROUNDING
 typedef enum {
     
     TaskitWaitFor_Exit = 1,

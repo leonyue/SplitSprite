@@ -143,7 +143,17 @@ static NSString *kGotoSettingSegueIdentifier = @"gotoSettingSegue";
 }
 
 - (void)convertClick {
-    [[TaskExportManager sharedManager] addTasks:self.tasks];
+    __weak typeof(self) weakSelf = self;
+    [[TaskExportManager sharedManager] addTasks:self.tasks converting:^(Task *convertingTask) {
+        if (convertingTask == nil) {
+            NSLog(@"convert finish");
+        } else {
+            NSInteger index = [weakSelf.tasks indexOfObject:convertingTask];
+            if (index != NSNotFound) {
+                NSLog(@"converting index : %ld",index);
+            }
+        }
+    }];
 }
 
 // MARK: TableView DataSource & Delegate
